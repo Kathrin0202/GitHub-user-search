@@ -45,7 +45,7 @@ export const Pagination = () => {
       handlePageChange(currentPage + 1);
     }
   };
-  
+
   useEffect(() => {
     const totalPagesCount = Math.ceil(totalCount / perPage);
     setPages(totalPagesCount);
@@ -53,7 +53,7 @@ export const Pagination = () => {
   return (
     <S.PaginationCard>
       <S.BtnPrev onClick={handlePrevClick}>Назад</S.BtnPrev>
-      <S.Page onClick={() => handlePageChange(page)}>{currentPage}</S.Page>
+      <S.Page onClick={() => handlePageChange(currentPage)}>{currentPage}</S.Page>
       <S.BtnNext onClick={handleNextClick}>Вперед</S.BtnNext>
     </S.PaginationCard>
   );

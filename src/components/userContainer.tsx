@@ -18,12 +18,12 @@ export const UserContainer = () => {
     navigate(`users/${userLogin}`);
     setOpenForm(true);
     getUserCard(userLogin)
-    .then((data) => {
-      dispatch(setUserDetails(data));
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+      .then((data) => {
+        dispatch(setUserDetails(data));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -39,7 +39,7 @@ export const UserContainer = () => {
           </S.UserCard>
         ))}
       </S.UserContainer>
-      <Pagination />
+      {users && <Pagination />}
     </>
   );
 };
