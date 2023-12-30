@@ -21,7 +21,7 @@ export const Pagination = () => {
     getUsers({
       userName: userName,
       perPage: perPage,
-      page: currentPage,
+      page: page,
     })
       .then((data) => dispatch(getUser(data)))
       .catch((error) => console.log(error));
