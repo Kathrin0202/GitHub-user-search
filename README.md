@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# Сайт поиска пользователей GitHub
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Аттестация для трудоустройства SkyPro
 
-## Available Scripts
+## Примечания по локальному запуску проекта для разработки
 
-In the project directory, you can run:
+Для клонирования репозитория выполните команду:
 
-### `npm start`
+```bash
+git clone https://github.com/Kathrin0202/user.git
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Перед запуском проекта необходимо установить зависимости:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+npm install
+```
 
-### `npm test`
+Запуск проекта:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm run start
+```
 
-### `npm run build`
+Запуск тестов:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm test
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Проект будет запущен по адресу: http://localhost:3000
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Backend данные
 
-### `npm run eject`
+Данные по пользователям берем с https://api.github.com/search/users?q={имя пользователя} (документация: https://developer.github.com/v3/search/#search-users).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Язык проекта
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<div id="socials" aligh="center">
+<img src="https://github.com/devicons/devicon/blob/master/icons/typescript/typescript-original.svg" title="js" width="40" height="40"/>&nbsp;
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" title="html" width="40" height="40"/>&nbsp;
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" title="css" width="40" height="40"/>&nbsp;
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" title="react" width="40" height="40"/>&nbsp;
+</div>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Стэк библиотек проекта
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+React
+React Router Dom
+React Redux
+Styled Components
+Jest
 
-## Learn More
+## Назначение папок и файлов проекта
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**/components** - компоненты общие для всего проекта
+**/pages** - страницы приложения  
+**/store** - файлы, относящиеся к управлению состоянием приложения
+**/styled** - глобальные стили приложения
+**/api** - функционал посвященный операциям с API (бэкэндом)  
+**/app** - главный компонент приложения, который объединяет все другие компоненты
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Структура приложения
 
-### Code Splitting
+1. Главная страница:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Пользователь вводит в поле ввода логин или первые буквы логина. При клике на кнопку "Найти" на странице отображаются 12 элементов. Для перемещения по выдаче имеется навигация по страницам и кнопки назад/вперед. Для сортировки по количеству репозиториев предназначены соответствующий выпадающий список.
 
-### Analyzing the Bundle Size
+2. Модальное окно "Информация о пользователе":
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+В выпадающем окне появляется информация о пользователе.
 
-### Making a Progressive Web App
+3. Страница "Не найдено":
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Пользователь может попасть на данную страницу если перешел на не существующий профиль.
 
-### Advanced Configuration
+### Функционал приложения
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [x] поиск: по логину;
+- [x] сортировка: по количеству репозиториев (возрастанию/убыванию);
+- [x] использовать React;
+- [x] пагинация;
+- [x] при клике на элемент открываются подробности (как и какие — на усмотрение разработчика);
+- [x] nice to have: реализовать 3 юнит-теста на функционал.
