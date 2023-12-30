@@ -7,7 +7,7 @@
 Для клонирования репозитория выполните команду:
 
 ```bash
-git clone https://github.com/Kathrin0202/user.git
+git clone https://github.com/Kathrin0202/GitHub-user-search.git
 ```
 
 Перед запуском проекта необходимо установить зависимости:
