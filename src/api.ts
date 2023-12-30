@@ -2,7 +2,7 @@ export const host = "https://api.github.com";
 
 export interface ILogin {
   userName: string;
-  sort: string;
+  sort?: string;
   perPage: number;
   page: number;
 }
