@@ -232,3 +232,13 @@ export const FilterText = styled.li`
     text-decoration-line: underline;
   }
 `;
+
+export const UserText = styled.p`
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 42px;
+  color: #009ee4;
+  margin-top: 30px;
+  text-align: center;
+`;

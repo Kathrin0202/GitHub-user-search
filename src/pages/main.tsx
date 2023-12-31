@@ -7,6 +7,7 @@ import { setSearchUser } from "../store/slices/searchSlices";
 import { getUser } from "../store/slices/userSlices";
 import * as S from "../styled/main.style";
 import { useAppSelector } from "../store/store";
+import { Skeleton } from "../components/skeleton";
 
 export const perPage = 12;
 
@@ -54,7 +55,7 @@ export const Main = () => {
         </S.ButtonSearchUser>
       </S.InputContainer>
       <FilterContainer />
-      {isLoading ? <p>Данные загружаются...</p> : <UserContainer />}
+      {isLoading ? <Skeleton/> : <UserContainer />}
     </S.Main>
   );
 };

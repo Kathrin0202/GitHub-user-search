@@ -29,16 +29,20 @@ export const UserContainer = () => {
   return (
     <>
       {openForm && <UserPage />}
-      <S.UserContainer>
-        {users.map((user, index) => (
-          <S.UserCard key={index} onClick={() => handleUserLink(user.login)}>
-            <S.UserImages>
-              <S.UserImg src={user.avatar_url} />
-            </S.UserImages>
-            <S.UserLogin>{user.login}</S.UserLogin>
-          </S.UserCard>
-        ))}
-      </S.UserContainer>
+      {users.length > 0 ? (
+        <S.UserContainer>
+          {users.map((user, index) => (
+            <S.UserCard key={index} onClick={() => handleUserLink(user.login)}>
+              <S.UserImages>
+                <S.UserImg src={user.avatar_url} />
+              </S.UserImages>
+              <S.UserLogin>{user.login}</S.UserLogin>
+            </S.UserCard>
+          ))}
+        </S.UserContainer>
+      ) : (
+        <S.UserText>Введите верный логин пользователя</S.UserText>
+      )}
       {users && <Pagination />}
     </>
   );
